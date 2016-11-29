@@ -3,6 +3,7 @@ angular.module('unboxingAdmin', [
   'appRoutes',
   'MainCtrl',
   'UsersCtrl',
+  'UsersService',
   'OrdersCtrl',
   'ItemsCtrl',
 ]);
