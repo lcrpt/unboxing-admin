@@ -1,1 +1,8 @@
-angular.module('unboxingAdmin', ['ngRoute', 'appRoutes', 'MainCtrl']);
+angular.module('unboxingAdmin', [
+  'ngRoute',
+  'appRoutes',
+  'MainCtrl',
+  'UsersCtrl',
+  'OrdersCtrl',
+  'ItemsCtrl',
+]);
