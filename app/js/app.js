@@ -1,7 +1,8 @@
-angular.module('unboxingAdmin', [
+angular.module('app', [
   'ngRoute',
   'appRoutes',
   'angularMoment',
+  'ngAnimate',
   'MainCtrl',
   'UsersCtrl',
   'UsersService',
