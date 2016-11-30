@@ -3,13 +3,14 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "dev": "babel-node server.js",
+    "dev": "NODE_ENV=dev && nodemon server.js --exec babel-node",
     "test": "mocha --bail --timeout 5000 --compilers js:babel-core/register"
   },
   "dependencies": {
-    "express" : "~4.5.1",
-    "body-parser" : "~1.4.2",
-    "method-override" : "~2.0.2"
+    "body-parser": "~1.4.2",
+    "cors": "^2.8.1",
+    "express": "~4.5.1",
+    "method-override": "~2.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",

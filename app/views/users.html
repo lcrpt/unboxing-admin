@@ -2,3 +2,114 @@
 	<h1>Users</h1>
 	<p>{{ tagline }}</p>
 </div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="login-panel panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Create a new User</h3>
+			</div>
+			<div class="panel-body">
+				<form ng-submit="saveUser(user)">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<input ng-model="user.username" class="form-control" placeholder="username" type="text" required="required">
+							</div>
+							<div class="form-group">
+								<input ng-model="user.email" class="form-control" placeholder="email" type="email" required="required">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input ng-model="user.password" class="form-control" placeholder="password" type="password" required="required">
+							</div>
+							<div class="form-group">
+								<select ng-model="user.roles" class="form-control">
+									<option value="customer">customer</option>
+									<option value="picker">picker</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-md btn-success">Create User</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Customers
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>User Name</th>
+								<th>Email</th>
+								<th>Roles</th>
+								<th>Created At</th>
+								<th>Updated At</th>
+								<th>Edit</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="user in users | filter: roles = 'customer'">
+								<td>{{user.id}}</td>
+								<td>{{user.username}}</td>
+								<td>{{user.email}}</td>
+								<td>{{user.roles}}</td>
+								<td><span am-time-ago="user.created_at"></span></td>
+								<td><span am-time-ago="user.updated_at"></span></td>
+								<td><button type="button" name="editUser" class="btn btn-md btn-success">Edit</button></td>
+								<td><button ng-click="deleteUser($event, user.id)" type="button" name="deleteUser" class="btn btn-md btn-danger">Delete</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Pickers
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>User Name</th>
+								<th>Email</th>
+								<th>Roles</th>
+								<th>Created At</th>
+								<th>Updated At</th>
+								<th>Edit</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="user in users | filter: roles = 'picker'">
+								<td>{{user.id}}</td>
+								<td>{{user.username}}</td>
+								<td>{{user.email}}</td>
+								<td>{{user.roles}}</td>
+								<td><span am-time-ago="user.created_at"></span></td>
+								<td><span am-time-ago="user.updated_at"></span></td>
+								<td><button type="button" name="editUser" class="btn btn-md btn-success">Edit</button></td>
+								<td><button type="button" name="deleteUser" class="btn btn-md btn-danger">Delete</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
