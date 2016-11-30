@@ -13,4 +13,12 @@ angular.module('UsersCtrl', []).controller('UsersController', ['$scope', 'Users'
 			console.error('error', error);
 		})
 	};
+
+	$scope.deleteUser = function(event, userId) {
+		Users.deleteUser(userId).then(function(deleteduser) {
+			console.log('save user success');
+		}).catch(function(error) {
+			console.error('error', error);
+		})
+	}
 }]);

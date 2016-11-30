@@ -62,7 +62,7 @@ angular.module('UsersService', []).factory('Users', function($http, $q) {
       let deferred = $q.defer();
 
       $http.delete(requestUrl).then((res) => {
-        deffered.resolve(res.data);
+        deferred.resolve(res.data);
       }).catch((err) => {
         deferred.reject(err);
       });

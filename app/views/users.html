@@ -67,7 +67,7 @@
 								<td><span am-time-ago="user.created_at"></span></td>
 								<td><span am-time-ago="user.updated_at"></span></td>
 								<td><button type="button" name="editUser" class="btn btn-md btn-success">Edit</button></td>
-								<td><button type="button" name="deleteUser" class="btn btn-md btn-danger">Delete</button></td>
+								<td><button ng-click="deleteUser($event, user.id)" type="button" name="deleteUser" class="btn btn-md btn-danger">Delete</button></td>
 							</tr>
 						</tbody>
 					</table>
