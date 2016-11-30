@@ -6,11 +6,14 @@ angular.module('UsersService', []).factory('Users', function($http, $q) {
       let deferred = $q.defer();
       const requestUrl = `${endpoint}/users`;
 
-      $http.get(requestUrl).then((res) => {
-        deffered.resolve(res.data);
-      }).catch((err) => {
-        deferred.reject(err);
-      });
+      $http
+        .get(requestUrl)
+        .then((res) => {
+          deferred.resolve(res.data);
+        })
+        .catch((err) => {
+          deferred.reject(err);
+        });
 
       return deferred.promise;
     },
@@ -20,7 +23,7 @@ angular.module('UsersService', []).factory('Users', function($http, $q) {
       let deferred = $q.defer();
 
       $http.get(requestUrl).then((res) => {
-        deffered.resolve(res.data);
+        deferred.resolve(res.data);
       }).catch((err) => {
         deferred.reject(err);
       });
@@ -33,7 +36,7 @@ angular.module('UsersService', []).factory('Users', function($http, $q) {
       let deferred = $q.defer();
 
       $http.post(requestUrl).then((res) => {
-        deffered.resolve(res.data);
+        deferred.resolve(res.data);
       }).catch((err) => {
         deferred.reject(err);
       });
@@ -46,7 +49,7 @@ angular.module('UsersService', []).factory('Users', function($http, $q) {
       let deferred = $q.defer();
 
       $http.put(requestUrl, user).then((res) => {
-        deffered.resolve(res.data);
+        deferred.resolve(res.data);
       }).catch((err) => {
         deferred.reject(err);
       });
