@@ -35,7 +35,7 @@ angular.module('UsersService', []).factory('Users', function($http, $q) {
       const requestUrl = `${endpoint}/users`;
       let deferred = $q.defer();
 
-      $http.post(requestUrl).then((res) => {
+      $http.post(requestUrl, user).then((res) => {
         deferred.resolve(res.data);
       }).catch((err) => {
         deferred.reject(err);
